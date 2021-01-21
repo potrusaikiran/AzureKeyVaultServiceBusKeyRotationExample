@@ -13,10 +13,10 @@ namespace KeyRotation.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private static string KeyVaultBaseUrl = "https://kvkkeyrotationvault.vault.azure.net";
+        private static string KeyVaultBaseUrl = "https://keyrotationtestdemo.vault.azure.net";
         private static string ServiceBusSecretKey = "ServiceBusPrimaryKey";
 
-        private static string ServiceBusName = "kvkkeyrotationbus";
+        private static string ServiceBusName = "keyrotationservicebus";
         private static string ServiceBusAccessPolicyName = "RootManageSharedAccessKey";
         private static string ServiceBusQueueName = "myqueue";
 
@@ -66,7 +66,7 @@ namespace KeyRotation.Web.Controllers
                 await client.SendAsync(message);
                 await client.CloseAsync();
 
-                return "Message Send";
+                return "Message Send person";
             }
             catch (Exception ex)
             {
